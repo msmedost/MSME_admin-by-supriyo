@@ -29,7 +29,7 @@ function Admin() {
         console.error('Error fetching active users count:', error);
       });
 
-    // Fetch the count of not verified users
+
     axios.get('http://localhost:2000/api/not-verified-users-count')
       .then(response => {
         setNotVerifiedCount(response.data.count);
