@@ -1,0 +1,8 @@
+/* styles.css */
+.fixed-topbar {
+  position: fixed;
+  top: 0;
+  left: 224px; /* same as the width of the sidebar */
+  width: calc(100% - 224px); /* ensure it doesn't overlap with the sidebar */
+  z-index: 1000; /* ensures the topbar stays above other elements */
+}

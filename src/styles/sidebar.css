@@ -1,0 +1,12 @@
+/* styles.css */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 224px; /* adjust the width as needed */
+  height: 100%;
+  background-color: #333; /* or any other color/style you prefer */
+  padding-top: 20px; /* optional padding */
+  overflow-x: hidden; /* disable horizontal scrolling */
+  overflow-y: auto; /* optional, in case the sidebar content is longer than the viewport height */
+}

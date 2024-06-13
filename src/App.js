@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Approve from './pages/Approve';
+import Admin from './pages/Admin';
+// import Login from './pages/Login';
+import Login from "./pages/login";
+import Mancat from "./pages/Mancat";
+// import { UserProvider } from './context/UserContext'; // Import UserProvider
+import { UserProvider } from "./inc/UserContext";
+// import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
+import ProtectedRoute from "./pages/ProtectedRoute";
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          {/* <Route path="/approve" element={<Approve />} /> */}
+          <Route path="/admin" element={<ProtectedRoute element={<Admin />} />} />
+          <Route path="/approve" element={<ProtectedRoute element={<Approve />} />} />
+          <Route path="/cat_manage" element={<ProtectedRoute element={<Mancat />} />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
