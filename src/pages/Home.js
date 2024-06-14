@@ -17,7 +17,7 @@ function Home() {
 
   const fetchFormData = async () => {
     try {
-      const response = await axios.get('http://localhost:2000/form-data');
+      const response = await axios.get('https://msme-server.onrender.com/form-data');
       setFormData(response.data);
       setError(null); // Clear error when data is successfully fetched
     } catch (error) {
@@ -27,7 +27,7 @@ function Home() {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:2000/form-data/${id}`, { status: newStatus });
+      await axios.put(`https://msme-server.onrender.com/form-data/${id}`, { status: newStatus });
       fetchFormData(); // Refresh form data after status update
     } catch (error) {
       console.error('Error updating status:', error);
@@ -63,7 +63,7 @@ function Home() {
           {formData.map(item => (
             <tr key={item._id}>
               <td>
-                {item.logo && <img src={`http://localhost:2000/${item.logo}`} alt="logo" className="table-logo" />}
+                {item.logo && <img src={`https://msme-server.onrender.com/${item.logo}`} alt="logo" className="table-logo" />}
               </td>
               <td>{item.name}</td>
               <td>{item.email}</td>
@@ -119,7 +119,7 @@ function Home() {
             <p><strong>City:</strong> {selectedItem.city}</p>
             <p><strong>Link:</strong> <a href={selectedItem.link} target="_blank" rel="noopener noreferrer">{selectedItem.link}</a></p>
             <p><strong>Disc:</strong> {selectedItem.disc}</p>
-            {selectedItem.logo && <img src={`http://localhost:2000/${selectedItem.logo}`} alt="logo" />}
+            {selectedItem.logo && <img src={`https://msme-server.onrender.com/${selectedItem.logo}`} alt="logo" />}
             <p><strong>Status:</strong> {selectedItem.status}</p>
             <button className="close-button" onClick={closeModal}>Close</button>
           </div>

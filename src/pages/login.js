@@ -14,7 +14,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:2000/login', { username, password });
+      const response = await axios.post('https://msme-server.onrender.com/login', { username, password });
       if (response.data.success) {
         setUserData(response); // Set the user data
         navigate("/admin");

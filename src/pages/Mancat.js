@@ -14,7 +14,7 @@ function Mancat() {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:2000/categories');
+      const response = await axios.get('https://msme-server.onrender.com/categories');
       console.log('Fetched categories:', response.data); // Debugging log
       setCategories(response.data);
     } catch (error) {
@@ -25,7 +25,7 @@ function Mancat() {
   const handleAddCategory = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:2000/categories', { name: newCategory });
+      const response = await axios.post('https://msme-server.onrender.com/categories', { name: newCategory });
       console.log('Added category:', response.data); // Debugging log
       setCategories([...categories, response.data]);
       setNewCategory('');
@@ -36,7 +36,7 @@ function Mancat() {
 
   const handleDeleteCategory = async (categoryId) => {
     try {
-      await axios.delete(`http://localhost:2000/categories/${categoryId}`);
+      await axios.delete(`https://msme-server.onrender.com/categories/${categoryId}`);
       console.log('Deleted category ID:', categoryId); // Debugging log
       setCategories(categories.filter(cat => cat._id !== categoryId));
     } catch (error) {
