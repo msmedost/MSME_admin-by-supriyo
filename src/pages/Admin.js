@@ -12,7 +12,7 @@ function Admin() {
 
   useEffect(() => {
     // Fetch the count of blocked users
-    axios.get('https://msme-server.onrender.com/api/blocked-users-count')
+    axios.get('https://msmeserver.onrender.com/api/blocked-users-count')
       .then(response => {
         setBlockedCount(response.data.count);
       })
@@ -21,7 +21,7 @@ function Admin() {
       });
 
     // Fetch the count of active users
-    axios.get('https://msme-server.onrender.com/api/active-users-count')
+    axios.get('https://msmeserver.onrender.com/api/active-users-count')
       .then(response => {
         setActiveCount(response.data.count);
       })
@@ -30,7 +30,7 @@ function Admin() {
       });
 
 
-    axios.get('https://msme-server.onrender.com/api/not-verified-users-count')
+    axios.get('https://msmeserver.onrender.com/api/not-verified-users-count')
       .then(response => {
         setNotVerifiedCount(response.data.count);
       })
